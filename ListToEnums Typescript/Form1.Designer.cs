@@ -32,17 +32,26 @@
             this.textNameEnum = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textCode = new System.Windows.Forms.TextBox();
-            this.btn_runGenerator = new System.Windows.Forms.Button();
+            this.btn_copy_enums = new System.Windows.Forms.Button();
             this.textItems = new System.Windows.Forms.TextBox();
             this.checkBoxLowercase = new System.Windows.Forms.CheckBox();
             this.checkBoxSlugify = new System.Windows.Forms.CheckBox();
             this.checkBox_i18n = new System.Windows.Forms.CheckBox();
             this.textBoxi18n = new System.Windows.Forms.TextBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textFromSlugify = new System.Windows.Forms.TextBox();
+            this.btn_copy_slugify = new System.Windows.Forms.Button();
+            this.textToSlugify = new System.Windows.Forms.TextBox();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // textNameEnum
             // 
-            this.textNameEnum.Location = new System.Drawing.Point(6, 31);
+            this.textNameEnum.Location = new System.Drawing.Point(3, 20);
             this.textNameEnum.Name = "textNameEnum";
             this.textNameEnum.Size = new System.Drawing.Size(234, 26);
             this.textNameEnum.TabIndex = 0;
@@ -50,7 +59,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 10);
+            this.label1.Location = new System.Drawing.Point(9, -1);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 18);
             this.label1.TabIndex = 1;
@@ -58,36 +67,37 @@
             // 
             // textCode
             // 
-            this.textCode.Location = new System.Drawing.Point(246, 60);
+            this.textCode.Location = new System.Drawing.Point(243, 49);
             this.textCode.Multiline = true;
             this.textCode.Name = "textCode";
             this.textCode.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textCode.Size = new System.Drawing.Size(375, 418);
+            this.textCode.Size = new System.Drawing.Size(375, 417);
             this.textCode.TabIndex = 3;
             // 
-            // btn_runGenerator
+            // btn_copy_enums
             // 
-            this.btn_runGenerator.Font = new System.Drawing.Font("Tajawal", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_runGenerator.Location = new System.Drawing.Point(6, 483);
-            this.btn_runGenerator.Name = "btn_runGenerator";
-            this.btn_runGenerator.Size = new System.Drawing.Size(615, 58);
-            this.btn_runGenerator.TabIndex = 4;
-            this.btn_runGenerator.Text = "Run Generator And Copy to Clippord";
-            this.btn_runGenerator.UseVisualStyleBackColor = true;
-            this.btn_runGenerator.Click += new System.EventHandler(this.btn_runGenerator_Click);
+            this.btn_copy_enums.Font = new System.Drawing.Font("Tajawal", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_copy_enums.Location = new System.Drawing.Point(3, 473);
+            this.btn_copy_enums.Name = "btn_copy_enums";
+            this.btn_copy_enums.Size = new System.Drawing.Size(615, 58);
+            this.btn_copy_enums.TabIndex = 4;
+            this.btn_copy_enums.Text = "Copy Enums";
+            this.btn_copy_enums.UseVisualStyleBackColor = true;
+            this.btn_copy_enums.Click += new System.EventHandler(this.btn_runGenerator_Click);
             // 
             // textItems
             // 
-            this.textItems.Location = new System.Drawing.Point(6, 60);
+            this.textItems.Location = new System.Drawing.Point(3, 49);
             this.textItems.Multiline = true;
             this.textItems.Name = "textItems";
+            this.textItems.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textItems.Size = new System.Drawing.Size(234, 417);
             this.textItems.TabIndex = 5;
             // 
             // checkBoxLowercase
             // 
             this.checkBoxLowercase.AutoSize = true;
-            this.checkBoxLowercase.Location = new System.Drawing.Point(246, 33);
+            this.checkBoxLowercase.Location = new System.Drawing.Point(243, 22);
             this.checkBoxLowercase.Name = "checkBoxLowercase";
             this.checkBoxLowercase.Size = new System.Drawing.Size(113, 22);
             this.checkBoxLowercase.TabIndex = 6;
@@ -97,7 +107,7 @@
             // checkBoxSlugify
             // 
             this.checkBoxSlugify.AutoSize = true;
-            this.checkBoxSlugify.Location = new System.Drawing.Point(365, 32);
+            this.checkBoxSlugify.Location = new System.Drawing.Point(362, 22);
             this.checkBoxSlugify.Name = "checkBoxSlugify";
             this.checkBoxSlugify.Size = new System.Drawing.Size(64, 22);
             this.checkBoxSlugify.TabIndex = 7;
@@ -107,7 +117,7 @@
             // checkBox_i18n
             // 
             this.checkBox_i18n.AutoSize = true;
-            this.checkBox_i18n.Location = new System.Drawing.Point(435, 33);
+            this.checkBox_i18n.Location = new System.Drawing.Point(432, 22);
             this.checkBox_i18n.Name = "checkBox_i18n";
             this.checkBox_i18n.Size = new System.Drawing.Size(49, 22);
             this.checkBox_i18n.TabIndex = 8;
@@ -117,37 +127,104 @@
             // 
             // textBoxi18n
             // 
-            this.textBoxi18n.Location = new System.Drawing.Point(490, 30);
+            this.textBoxi18n.Location = new System.Drawing.Point(487, 20);
             this.textBoxi18n.Name = "textBoxi18n";
             this.textBoxi18n.Size = new System.Drawing.Size(131, 26);
             this.textBoxi18n.TabIndex = 9;
             this.textBoxi18n.Text = "tashdjir.";
             this.textBoxi18n.Visible = false;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(630, 563);
+            this.tabControl1.TabIndex = 10;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.btn_copy_enums);
+            this.tabPage1.Controls.Add(this.textItems);
+            this.tabPage1.Controls.Add(this.textBoxi18n);
+            this.tabPage1.Controls.Add(this.checkBox_i18n);
+            this.tabPage1.Controls.Add(this.textNameEnum);
+            this.tabPage1.Controls.Add(this.checkBoxSlugify);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.textCode);
+            this.tabPage1.Controls.Add(this.checkBoxLowercase);
+            this.tabPage1.Location = new System.Drawing.Point(4, 27);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(622, 532);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Enums";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.textToSlugify);
+            this.tabPage2.Controls.Add(this.btn_copy_slugify);
+            this.tabPage2.Controls.Add(this.textFromSlugify);
+            this.tabPage2.Location = new System.Drawing.Point(4, 27);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(622, 532);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Slugify";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // textFromSlugify
+            // 
+            this.textFromSlugify.Location = new System.Drawing.Point(3, 3);
+            this.textFromSlugify.Multiline = true;
+            this.textFromSlugify.Name = "textFromSlugify";
+            this.textFromSlugify.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textFromSlugify.Size = new System.Drawing.Size(294, 464);
+            this.textFromSlugify.TabIndex = 0;
+            // 
+            // btn_copy_slugify
+            // 
+            this.btn_copy_slugify.Font = new System.Drawing.Font("Tajawal", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_copy_slugify.Location = new System.Drawing.Point(3, 473);
+            this.btn_copy_slugify.Name = "btn_copy_slugify";
+            this.btn_copy_slugify.Size = new System.Drawing.Size(615, 58);
+            this.btn_copy_slugify.TabIndex = 5;
+            this.btn_copy_slugify.Text = "Copy Slugify";
+            this.btn_copy_slugify.UseVisualStyleBackColor = true;
+            // 
+            // textToSlugify
+            // 
+            this.textToSlugify.Location = new System.Drawing.Point(304, 3);
+            this.textToSlugify.Multiline = true;
+            this.textToSlugify.Name = "textToSlugify";
+            this.textToSlugify.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textToSlugify.Size = new System.Drawing.Size(315, 464);
+            this.textToSlugify.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(623, 544);
-            this.Controls.Add(this.textBoxi18n);
-            this.Controls.Add(this.checkBox_i18n);
-            this.Controls.Add(this.checkBoxSlugify);
-            this.Controls.Add(this.checkBoxLowercase);
-            this.Controls.Add(this.textItems);
-            this.Controls.Add(this.btn_runGenerator);
-            this.Controls.Add(this.textCode);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textNameEnum);
+            this.ClientSize = new System.Drawing.Size(630, 563);
+            this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Tajawal", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListToEunms TypeScript v0.1";
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -156,12 +233,18 @@
         private System.Windows.Forms.TextBox textNameEnum;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textCode;
-        private System.Windows.Forms.Button btn_runGenerator;
+        private System.Windows.Forms.Button btn_copy_enums;
         private System.Windows.Forms.TextBox textItems;
         private System.Windows.Forms.CheckBox checkBoxLowercase;
         private System.Windows.Forms.CheckBox checkBoxSlugify;
         private System.Windows.Forms.CheckBox checkBox_i18n;
         private System.Windows.Forms.TextBox textBoxi18n;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TextBox textToSlugify;
+        private System.Windows.Forms.Button btn_copy_slugify;
+        private System.Windows.Forms.TextBox textFromSlugify;
     }
 }
 
