@@ -1,2 +1,2 @@
-# ListToEnums-Typescript
+# TypescriptUtils
 List To Enums Typescript
