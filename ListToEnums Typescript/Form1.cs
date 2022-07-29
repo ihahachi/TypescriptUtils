@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,8 +17,25 @@ namespace ListToEnums_Typescript
         {
             InitializeComponent();
         }
+        static string RemoveDiacritics(string stIn)
+        {
+            string stFormD = stIn.Normalize(NormalizationForm.FormD);
+            StringBuilder sb = new StringBuilder();
 
-        private void btn_runGenerator_Click(object sender, EventArgs e)
+            for (int ich = 0; ich < stFormD.Length; ich++)
+            {
+                UnicodeCategory uc = CharUnicodeInfo.GetUnicodeCategory(stFormD[ich]);
+                if (uc != UnicodeCategory.NonSpacingMark)
+                {
+                    sb.Append(stFormD[ich]);
+                }
+            }
+
+            return (sb.ToString().Normalize(NormalizationForm.FormC));
+        }
+    
+
+    private void btn_runGenerator_Click(object sender, EventArgs e)
         {
             if(textItems.Text == string.Empty) return;
             textCode.Text = "";
@@ -57,6 +75,27 @@ namespace ListToEnums_Typescript
             {
                 textBoxi18n.Visible = false;
             }
+        }
+
+        private void btn_copy_slugify_Click(object sender, EventArgs e)
+        {
+            if (textFromSlugify.Text == string.Empty) return;
+            textToSlugify.Text = "";
+            string txt = textFromSlugify.Text;
+            string item_ = "";
+            string delimiter = textDelimiter.Text.Trim();
+            string[] lst = txt.Split(new Char[] {'\n', '\r'}, StringSplitOptions.RemoveEmptyEntries);
+            foreach (var item in lst)
+            {
+                item_ = item.Trim();
+                item_ = item_.ToLower();
+                item_ = item_.Replace(" ", delimiter);
+                textToSlugify.AppendText(item_ + Environment.NewLine);
+            }
+
+            textToSlugify.Text = RemoveDiacritics(textToSlugify.Text);
+
+            Clipboard.SetText(textToSlugify.Text);
         }
     }
 }
