@@ -41,11 +41,11 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textFromSlugify = new System.Windows.Forms.TextBox();
-            this.btn_copy_slugify = new System.Windows.Forms.Button();
-            this.textToSlugify = new System.Windows.Forms.TextBox();
-            this.textDelimiter = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.textDelimiter = new System.Windows.Forms.TextBox();
+            this.textToSlugify = new System.Windows.Forms.TextBox();
+            this.btn_copy_slugify = new System.Windows.Forms.Button();
+            this.textFromSlugify = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -75,6 +75,7 @@
             this.textCode.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textCode.Size = new System.Drawing.Size(375, 417);
             this.textCode.TabIndex = 3;
+            this.textCode.DoubleClick += new System.EventHandler(this.textCode_DoubleClick);
             // 
             // btn_copy_enums
             // 
@@ -95,6 +96,7 @@
             this.textItems.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textItems.Size = new System.Drawing.Size(234, 417);
             this.textItems.TabIndex = 5;
+            this.textItems.DoubleClick += new System.EventHandler(this.textItems_DoubleClick);
             // 
             // checkBoxLowercase
             // 
@@ -181,14 +183,32 @@
             this.tabPage2.Text = "Slugify";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // textFromSlugify
+            // label2
             // 
-            this.textFromSlugify.Location = new System.Drawing.Point(3, 33);
-            this.textFromSlugify.Multiline = true;
-            this.textFromSlugify.Name = "textFromSlugify";
-            this.textFromSlugify.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textFromSlugify.Size = new System.Drawing.Size(295, 434);
-            this.textFromSlugify.TabIndex = 0;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 18);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Delimiter :";
+            // 
+            // textDelimiter
+            // 
+            this.textDelimiter.Location = new System.Drawing.Point(78, 3);
+            this.textDelimiter.Name = "textDelimiter";
+            this.textDelimiter.Size = new System.Drawing.Size(131, 26);
+            this.textDelimiter.TabIndex = 10;
+            this.textDelimiter.Text = "_";
+            // 
+            // textToSlugify
+            // 
+            this.textToSlugify.Location = new System.Drawing.Point(304, 33);
+            this.textToSlugify.Multiline = true;
+            this.textToSlugify.Name = "textToSlugify";
+            this.textToSlugify.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textToSlugify.Size = new System.Drawing.Size(315, 434);
+            this.textToSlugify.TabIndex = 6;
+            this.textToSlugify.DoubleClick += new System.EventHandler(this.textToSlugify_DoubleClick);
             // 
             // btn_copy_slugify
             // 
@@ -201,31 +221,15 @@
             this.btn_copy_slugify.UseVisualStyleBackColor = true;
             this.btn_copy_slugify.Click += new System.EventHandler(this.btn_copy_slugify_Click);
             // 
-            // textToSlugify
+            // textFromSlugify
             // 
-            this.textToSlugify.Location = new System.Drawing.Point(304, 33);
-            this.textToSlugify.Multiline = true;
-            this.textToSlugify.Name = "textToSlugify";
-            this.textToSlugify.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textToSlugify.Size = new System.Drawing.Size(315, 434);
-            this.textToSlugify.TabIndex = 6;
-            // 
-            // textDelimiter
-            // 
-            this.textDelimiter.Location = new System.Drawing.Point(78, 3);
-            this.textDelimiter.Name = "textDelimiter";
-            this.textDelimiter.Size = new System.Drawing.Size(131, 26);
-            this.textDelimiter.TabIndex = 10;
-            this.textDelimiter.Text = "_";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 18);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Delimiter :";
+            this.textFromSlugify.Location = new System.Drawing.Point(3, 33);
+            this.textFromSlugify.Multiline = true;
+            this.textFromSlugify.Name = "textFromSlugify";
+            this.textFromSlugify.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textFromSlugify.Size = new System.Drawing.Size(295, 434);
+            this.textFromSlugify.TabIndex = 0;
+            this.textFromSlugify.DoubleClick += new System.EventHandler(this.textFromSlugify_DoubleClick);
             // 
             // Form1
             // 

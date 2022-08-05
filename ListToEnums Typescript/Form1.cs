@@ -97,5 +97,25 @@ namespace ListToEnums_Typescript
 
             Clipboard.SetText(textToSlugify.Text);
         }
+
+        private void textItems_DoubleClick(object sender, EventArgs e)
+        {
+            textItems.Text = "";
+        }
+
+        private void textCode_DoubleClick(object sender, EventArgs e)
+        {
+            textCode.Text = "";
+        }
+
+        private void textFromSlugify_DoubleClick(object sender, EventArgs e)
+        {
+            textFromSlugify.Text = "";
+        }
+
+        private void textToSlugify_DoubleClick(object sender, EventArgs e)
+        {
+            textToSlugify.Text = "";
+        }
     }
 }
