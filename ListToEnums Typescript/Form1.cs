@@ -62,6 +62,7 @@ namespace ListToEnums_Typescript
                 
             }
             textCode.AppendText("}");
+            textCode.Text = RemoveDiacritics(textCode.Text);
             Clipboard.SetText(textCode.Text);
         }
 
